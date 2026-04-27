@@ -21,5 +21,6 @@
     }
   },
   "include": ["src"],
+  "exclude": ["src/workers"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
