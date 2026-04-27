@@ -1,0 +1,168 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  height: 300px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--border-default);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ─── KPI Row ─────────────────────────────────────────────────────────────── */
+
+.kpiRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.kpiCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kpiValue {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.kpiLabel {
+  font-size: 0.77rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ─── Charts ─────────────────────────────────────────────────────────────── */
+
+.chartRow {
+  display: flex;
+  gap: 16px;
+}
+
+.chartCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 0;
+}
+
+.chartHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.chartTitle {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.chartPeriod {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ─── Custom Tooltip ──────────────────────────────────────────────────────── */
+
+.tooltip {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+}
+
+.tooltipLabel {
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tooltipRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-weight: 500;
+}
+
+/* ─── Dept Legend ─────────────────────────────────────────────────────────── */
+
+.deptLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.deptRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deptDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.deptName {
+  flex: 1;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.deptOcc {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-primary);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .kpiRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .chartRow {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .kpiRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}

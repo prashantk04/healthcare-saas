@@ -1,0 +1,160 @@
+/* ─── CSS Variables ──────────────────────────────────────────────────────── */
+
+:root {
+  /* Brand */
+  --color-primary: #3b82f6;
+  --color-primary-dim: rgba(59, 130, 246, 0.15);
+  --color-accent: #06b6d4;
+  --color-accent-dim: rgba(6, 182, 212, 0.12);
+
+  /* Status */
+  --color-critical: #ef4444;
+  --color-critical-dim: rgba(239, 68, 68, 0.15);
+  --color-stable: #22c55e;
+  --color-stable-dim: rgba(34, 197, 94, 0.12);
+  --color-active: #3b82f6;
+  --color-active-dim: rgba(59, 130, 246, 0.12);
+  --color-discharged: #71717a;
+  --color-discharged-dim: rgba(113, 113, 122, 0.12);
+  --color-warning: #f59e0b;
+
+  /* Surface (dark theme) */
+  --bg-base: #070d1a;
+  --bg-surface: #0d1829;
+  --bg-card: #111f35;
+  --bg-card-hover: #162540;
+  --bg-overlay: rgba(7, 13, 26, 0.9);
+
+  /* Text */
+  --text-primary: #e8eef7;
+  --text-secondary: #8ca3c4;
+  --text-muted: #4a6080;
+  --text-inverse: #070d1a;
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-elevated: 0 8px 40px rgba(0, 0, 0, 0.6);
+
+  /* Sidebar */
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 72px;
+
+  /* Typography */
+  --font-sans: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-display: 'Fraunces', serif;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Reset ──────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* ─── Typography ─────────────────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+/* ─── Utility Classes ─────────────────────────────────────────────────────── */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); }
+  70%  { transform: scale(1); box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease both;
+}

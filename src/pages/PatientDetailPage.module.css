@@ -1,0 +1,320 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.35s ease both;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--border-default);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.notFound {
+  text-align: center;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: var(--text-secondary);
+}
+
+/* ─── Back ───────────────────────────────────────────────────────────────── */
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 6px 0;
+  font-family: var(--font-sans);
+  transition: color var(--transition-fast);
+  width: fit-content;
+}
+
+.back:hover {
+  color: var(--text-primary);
+}
+
+.backBtn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  transition: all var(--transition-fast);
+}
+
+.backBtn:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+/* ─── Hero Card ──────────────────────────────────────────────────────────── */
+
+.heroCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.heroAvatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.heroInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.heroId {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  position: relative;
+}
+
+.pulseRing {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse-ring 1.5s ease infinite;
+}
+
+.heroName {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.heroDiag {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.heroTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.heroTags span {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* ─── Section Title ──────────────────────────────────────────────────────── */
+
+.sectionTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+/* ─── Vitals Grid ─────────────────────────────────────────────────────────── */
+
+.vitalsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.vitalCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.vitalCard.vitalAlert {
+  border-color: var(--color-critical);
+  background: var(--color-critical-dim);
+}
+
+.vitalCard.vitalAlert::before {
+  content: '!';
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-critical);
+  background: var(--color-critical-dim);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-critical);
+}
+
+.vitalIcon {
+  color: var(--text-muted);
+  display: flex;
+}
+
+.vitalCard.vitalAlert .vitalIcon {
+  color: var(--color-critical);
+}
+
+.vitalBody {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.vitalValue {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.vitalCard.vitalAlert .vitalValue {
+  color: var(--color-critical);
+}
+
+.vitalUnit {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.vitalLabel {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ─── Detail Grid ─────────────────────────────────────────────────────────── */
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.infoCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.infoValue {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .vitalsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroCard {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .vitalsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,273 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ─── Greeting ───────────────────────────────────────────────────────────── */
+
+.greeting {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.greetingTitle {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  margin-bottom: 6px;
+}
+
+.greetingTitle em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.greetingDate {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.simulateBtn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.simulateBtn:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+/* ─── Stats Grid ─────────────────────────────────────────────────────────── */
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.statCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.statCard:hover {
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-card);
+}
+
+.statIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.statSub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* ─── Section ─────────────────────────────────────────────────────────────── */
+
+.section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sectionTitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.seeAll {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: opacity var(--transition-fast);
+}
+
+.seeAll:hover {
+  opacity: 0.75;
+}
+
+/* ─── Recent List ─────────────────────────────────────────────────────────── */
+
+.recentList {
+  display: flex;
+  flex-direction: column;
+}
+
+.recentRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.recentRow:last-child {
+  border-bottom: none;
+}
+
+.recentRow:hover {
+  background: var(--bg-card-hover);
+}
+
+.recentAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e40af, #0891b2);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.recentInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.recentName {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.recentDiag {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recentMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.recentWard {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ─── Status Badge ────────────────────────────────────────────────────────── */
+
+.statusBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statusBadge[data-status='critical'] {
+  background: var(--color-critical-dim);
+  color: var(--color-critical);
+}
+
+.statusBadge[data-status='active'] {
+  background: var(--color-active-dim);
+  color: var(--color-active);
+}
+
+.statusBadge[data-status='stable'] {
+  background: var(--color-stable-dim);
+  color: var(--color-stable);
+}
+
+.statusBadge[data-status='discharged'] {
+  background: var(--color-discharged-dim);
+  color: var(--color-discharged);
+}
+
+/* ─── Skeleton ───────────────────────────────────────────────────────────── */
+
+.skeletonRow {
+  height: 64px;
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 640px) {
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .greeting {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
